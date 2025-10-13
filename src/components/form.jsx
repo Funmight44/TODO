@@ -27,7 +27,7 @@ const Form = () => {
     function addtasks(e){
         e.preventDefault();
         if(!task.trim()) return
-        setTodo([...todos, {id: Date.now(), task}])
+        setTodo([...todos, {id: Date.now(), completed: false, task}])
         setTasks('')
     }
 
@@ -35,6 +35,13 @@ const Form = () => {
     function deleteTask(id){
        setTodo(todos.filter((todo) => todo.id !== id ))
     }
+
+    function handleCheckbox(id){
+        const updateTodos = todos.map((todo) => 
+            todo.id === id ? {...todo, completed: !todo.completed} : todo
+        );
+        setTodo(updateTodos)
+    };
 
     if(!isAuthenticated){
         return (
@@ -50,6 +57,7 @@ const Form = () => {
             <div className="todo-cont">
                 {todos.map((todo) => 
                     (<div className="todo-card" key={todo.id}>
+                        <input type="checkbox" checked={todo.completed} onChange={() => handleCheckbox(todo.id)}/>
                         <p>{todo.task}</p>
                         <i className="bi bi-trash" onClick={() => deleteTask(todo.id)}></i>
                     </div>)  )} 
