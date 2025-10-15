@@ -93,7 +93,7 @@ header div button:hover{
 .todo .todo-cont{
   width: 100%;
   background-color: #fff;
-  margin: 10px 0;
+  margin: 20px 0;
   border-radius: 5px;
 
   display: flex;
@@ -103,7 +103,7 @@ header div button:hover{
 
 .todo form{
   flex-basis: 90%;
-  margin: 20px 0;
+  
    background-color: #fff;
    padding: 10px;
    border-radius: 5px;
