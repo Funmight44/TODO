@@ -91,10 +91,9 @@ header div button:hover{
 }
 
 .todo .todo-cont{
-  flex-basis: 90%;
+  width: 100%;
   background-color: #fff;
   margin: 10px 0;
-  margin-left: 10px;
   border-radius: 5px;
 
   display: flex;
