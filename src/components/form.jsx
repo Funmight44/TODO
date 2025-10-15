@@ -1,10 +1,12 @@
 import {  useEffect, useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
+import { useFormStatus } from "react-dom";
 
 const Form = () => {
     const [todos, setTodo] = useState([]);
     const [task, setTasks] = useState('');
-     const {isAuthenticated, user, loginWithRedirect, logout} = useAuth0();
+    const {isAuthenticated, user, loginWithRedirect} = useAuth0();
+    const {pending} = useFormStatus();
 
     useEffect(() => {
         if(isAuthenticated && user){
@@ -68,7 +70,7 @@ const Form = () => {
                     <label>Enter your task</label>
                     <input type="text" placeholder="write here" required value={task} onChange={(e) => setTasks(e.target.value)}/>
                 </div>
-                <button type="submit">Enter</button>
+                <button type="submit" disabled={pending}>{pending ? 'Submitting...' : 'Submit'}</button>
             </form>
         </section>
         

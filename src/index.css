@@ -8,12 +8,13 @@
 }
 
 body{
-  background-color: #f67f6789;
+  background-color: white;
   min-height: 100vh;
 }
 
 main{
-  width: 70%;
+  width: 50%;
+  background-color: #f67f6789;
   margin: 60px auto;
   box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.20);
   border-radius: 10px;
@@ -23,6 +24,7 @@ header{
   width: 100%;
   padding: 10px;
   background-color: #fff;
+  border-radius: 10px 10px 0px 0px ;
   animation: slideDown 0.8s ease forwards
 }
 
@@ -83,7 +85,7 @@ header div button:hover{
   width: 100%;
   /* background-color:#f67f6789 ; */
   display: flex;
-  gap: 20px;
+  gap: 10px;
   flex-direction: column;
   animation: fadeIn 0.9s ease forwards;
 }
@@ -91,7 +93,7 @@ header div button:hover{
 .todo .todo-cont{
   flex-basis: 90%;
   background-color: #fff;
-  margin: 20px 0;
+  margin: 10px 0;
   margin-left: 10px;
   border-radius: 5px;
 
